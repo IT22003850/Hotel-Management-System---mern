@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/dbConfig')
+const roomRoutes = require('./routes/roomRoutes')
 require('colors')
 
 
@@ -10,9 +11,7 @@ connectDB()
 
 const app = express()
 
-app.get('/', (req,res) => {
-    res.status(201).send('welcome to home')
-})
+app.use('/api/rooms', roomRoutes)
 
 app.listen(PORT, ()=>{
     console.log(`server is listning to port ${PORT}`.blue);
