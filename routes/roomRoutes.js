@@ -1,20 +1,13 @@
 const express = require('express')
 const router = express.Router()
+const {getRooms, createRoom,updateRoom,deleteRoom} = require('../controllers/roomController')
 
-router.get('/', (req, res) => {
-    res.status(200).json({message: 'get /'})
-})
+router.get('/', getRooms)
 
-router.post('/', (req, res) => {
-    res.status(201).json({message: 'POST created'})
-})
+router.post('/', createRoom)
 
-router.put('/', (req, res) => {
-    res.status(200).json({message: 'PUT updated'})
-})
+router.put('/', updateRoom)
 
-router.delete('/', (req, res) => {
-    res.status(200).json({message: 'DELETE deleted'})
-})
+router.delete('/', deleteRoom)
 
 module.exports = router;
