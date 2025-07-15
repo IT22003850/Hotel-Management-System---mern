@@ -6,8 +6,8 @@ router.get('/', getRooms)
 
 router.post('/', createRoom)
 
-router.put('/', updateRoom)
+router.put('/:id', updateRoom)
 
-router.delete('/', deleteRoom)
+router.delete('/:id', deleteRoom)
 
 module.exports = router;

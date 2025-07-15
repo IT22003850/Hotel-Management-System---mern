@@ -7,9 +7,13 @@ require('colors')
 
 const PORT = process.env.PORT
 
+//connect to mongoDB
 connectDB()
 
 const app = express()
+
+//middleware
+app.use(express.json())
 
 app.use('/api/rooms', roomRoutes)
 
